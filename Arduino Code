@@ -1,0 +1,39 @@
+
+const int Too_Much_air = 434;   // Reads 434 when completely dry
+const int Good_water = 207; // Reads 207 when in water
+
+// If the reading is higher than 300 it is dry in the soil 
+const int DRY_THRESHOLD = 300; 
+
+//which pin to put buzzeer
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(13, OUTPUT); // Pin 13 controls your LED
+
+  pinMode(Buzzer,OUTPUT);
+}
+
+void loop() {
+  int How_Much_Soil = analogRead(A0);
+
+  Serial.print("Raw Value: ");
+  Serial.println(How_Much_Soil);
+
+  // When dry (434), it is greater than 300 -> LED turns ON
+  // When wet (207), it is less than 300 -> LED turns OFF
+  if (How_Much_Soil > DRY_THRESHOLD) {
+    digitalWrite(13, HIGH); 
+
+    
+
+    //setting to pin 13 if the soil water level not enough (> 300)
+  } 
+  else {
+    digitalWrite(13, LOW);  
+
+  }
+
+  delay(500); 
+}
