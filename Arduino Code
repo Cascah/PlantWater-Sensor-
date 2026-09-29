@@ -5,7 +5,7 @@ const int Good_water = 207; // Reads 207 when in water
 // If the reading is higher than 300 it is dry in the soil 
 const int DRY_THRESHOLD = 300; 
 
-//which pin to put buzzeer
+
 
 
 void setup() {
